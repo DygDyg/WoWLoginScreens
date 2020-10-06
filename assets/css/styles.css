@@ -2,10 +2,10 @@ html, body {
     margin: 0;
     height: 100%;
     overflow: hidden;
-	cursor: url('../img/ui/Point.png'), auto;
+    cursor: url('../img/ui/Point.png'), auto;
 }
 
-@font-face{
+@font-face {
     font-family: 'FRIZQT';
     src: url('../fonts/FRIZQT__.ttf');
 }
@@ -54,11 +54,11 @@ html, body {
     z-index: 2;
 }
 
-#realmListButton{
+#realmListButton {
     margin-top: 95px;
 }
 
-#disconButton{
+#disconButton {
     margin-top: 95px;
 }
 
@@ -77,7 +77,6 @@ html, body {
     text-align: left;
     color: #ffc700;
     text-shadow: 0 0 2px #000, 0 0 2px #000, 0 0 2px #000, 0 0 2px #000, 0 0 3px #000;
-
     bottom: -8px;
     left: 10px;
 }
@@ -89,7 +88,6 @@ html, body {
     text-align: left;
     color: #ffc700;
     text-shadow: 0 0 2px #000, 0 0 2px #000, 0 0 2px #000, 0 0 2px #000, 0 0 3px #000;
-
     bottom: 10px;
     left: 10px;
 }
@@ -128,8 +126,7 @@ html, body {
     pointer-events: none;
 }
 
-.UIBoxBackground 
-{
+.UIBoxBackground {
     position: fixed;
     background-color: rgba(0, 0, 0, 0.75);
     z-index: 0;
@@ -142,7 +139,6 @@ html, body {
     text-align: center;
     color: #ffc700;
     text-shadow: 0 0 8px #000, 0 0 8px #000, 0 0 8px #000, 0 0 8px #000, 0 0 8px #000;
-
     background: url('../img/ui/buttons/button_idle.png') no-repeat top;
     width: 270px;
     height: 71px;
@@ -153,7 +149,7 @@ html, body {
     transform: scale(0.8);
     filter: drop-shadow(0px 0px 8px #000);
     z-index: 2;
-	cursor: url('../img/ui/Point.png'), auto;
+    cursor: url('../img/ui/Point.png'), auto;
 }
 
 .button:hover {
@@ -161,7 +157,6 @@ html, body {
     text-align: center;
     color: #ffffff;
     text-shadow: 0 0 8px #000, 0 0 8px #000, 0 0 8px #000, 0 0 8px #000, 0 0 8px #000;
-
     background: url('../img/ui/buttons/button_hover.png') no-repeat top;
 }
 
@@ -171,7 +166,6 @@ html, body {
     text-align: center;
     color: #ffffff;
     text-shadow: 0 0 8px #000, 0 0 8px #000, 0 0 8px #000, 0 0 8px #000, 0 0 8px #000;
-
     background: url('../img/ui/buttons/button_pressed.png') no-repeat top;
 }
 
@@ -181,7 +175,6 @@ html, body {
     text-align: center;
     color: #ffc700;
     text-shadow: 0 0 8px #000, 0 0 8px #000, 0 0 8px #000, 0 0 8px #000, 0 0 8px #000;
-
     background: url('../img/ui/buttons/button_idle_b.png') no-repeat top;
     width: 270px;
     height: 71px;
@@ -192,7 +185,7 @@ html, body {
     transform: scale(0.8);
     filter: drop-shadow(0px 0px 8px #000);
     z-index: 2;
-	cursor: url('../img/ui/Point.png'), auto;
+    cursor: url('../img/ui/Point.png'), auto;
 }
 
 .button_b:hover {
@@ -200,7 +193,6 @@ html, body {
     text-align: center;
     color: #ffffff;
     text-shadow: 0 0 8px #000, 0 0 8px #000, 0 0 8px #000, 0 0 8px #000, 0 0 8px #000;
-
     background: url('../img/ui/buttons/button_hover_b.png') no-repeat top;
 }
 
@@ -210,23 +202,21 @@ html, body {
     text-align: center;
     color: #ffffff;
     text-shadow: 0 0 8px #000, 0 0 8px #000, 0 0 8px #000, 0 0 8px #000, 0 0 8px #000;
-
     background: url('../img/ui/buttons/button_pressed_b.png') no-repeat top;
 }
 
 .centered {
     min-height: 100vh;
-    display:flex;
+    display: flex;
     flex-direction: column;
-    justify-content:center;
-    align-items:center;
+    justify-content: center;
+    align-items: center;
 }
 
-.fullWidth
-{
+.fullWidth {
     display: flex;
-    align-items:center;
-    justify-content:center;
+    align-items: center;
+    justify-content: center;
     position: fixed;
     bottom: 0px;
     left: 0px;
@@ -236,8 +226,7 @@ html, body {
     pointer-events: none;
 }
 
-.fullScreen
-{
+.fullScreen {
     position: absolute;
     top: 0px;
     left: 0px;
@@ -303,7 +292,7 @@ html, body {
 .slider:hover {
     opacity: 1;
 }
-  
+
 .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
@@ -315,7 +304,7 @@ html, body {
     border: none;
     z-index: 4;
 }
-  
+
 .slider::-moz-range-thumb {
     width: 32px;
     height: 32px;
