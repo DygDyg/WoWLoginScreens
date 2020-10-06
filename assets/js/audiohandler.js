@@ -17,15 +17,15 @@ var videoPath = './assets/img/bg';
 var logoPath = './assets/img/ui/logos';
 
 var verMap = [
-    'Version 1.12.1 (5875) (Release)',
-    'Version 2.4.3 (8606) (Release)',
-    'Version 3.3.5 (12340) (Release)',
-    'Version 4.3.4 (15595) (Release x86)',
-    'Version 5.4.8 (18414) (Release x86)',
-    'Version 6.2.0 (20173) (Release x64)',
-    'Version 7.3.5 (26365) (Release x64)',
-    'Version 8.3.7 (35662) (Release x64)',
-    'Version 9.0.1 (35944) (Release x64)'
+    'Версия 1.12.1 (5875) (Релиз)',
+    'Версия 2.4.3 (8606) (Релиз)',
+    'Версия 3.3.5 (12340) (Релиз)',
+    'Версия 4.3.4 (15595) (Релиз x86)',
+    'Версия 5.4.8 (18414) (Релиз x86)',
+    'Версия 6.2.0 (20173) (Релиз x64)',
+    'Версия 7.3.5 (26365) (Релиз x64)',
+    'Версия 8.3.7 (35662) (Релиз x64)',
+    'Версия 9.0.1 (35944) (Релиз x64)'
 ];
 
 var dateMap = [
@@ -71,8 +71,7 @@ var audioInitialPlayback = false;
 var queuePos = null;
 var disconnected = false;
 
-function init()
-{
+function init() {
     switchExpansion();
     window.addEventListener('click', waitForInteractionToPlayAudio);
 
@@ -80,10 +79,8 @@ function init()
     setInterval(determineIfDisconnect, 8000);
 }
 
-function waitForInteractionToPlayAudio()
-{
-    if(!audioInitialPlayback)
-    {
+function waitForInteractionToPlayAudio() {
+    if (!audioInitialPlayback) {
         buttonAudio.volume = 0.5;
         audio.volume = 0.5;
         audio.loop = true;
@@ -92,49 +89,41 @@ function waitForInteractionToPlayAudio()
     }
 }
 
-function determineIfDisconnect()
-{
-    if(!disconnected)
-    {
+function determineIfDisconnect() {
+    if (!disconnected) {
         var rand = Math.random();
-        if(rand < 0.75)
+        if (rand < 0.75)
             getPositionInQueue();
     }
 }
 
-function getPositionInQueue()
-{
+function getPositionInQueue() {
     var number;
-    if(queuePos === null)
-    {    
+    if (queuePos === null) {
         number = Math.floor(Math.random() * Math.floor(10000));
         queuePos = number;
     }
-    else
-    {
+    else {
         number = Math.floor(queuePos - (Math.random() * Math.floor(15)));
         queuePos = number;
 
-        if(queuePos < 3)
-        {
+        if (queuePos < 3) {
             number = 0;
             queuePos = 0;
             doDisconnect();
         }
     }
 
-    document.getElementById('queuePosition').innerHTML = 'Position in Queue: ' + number;
+    document.getElementById('queuePosition').innerHTML = 'Место в очереди: ' + number;
     getEstimatedTime(number)
 }
 
-function getEstimatedTime(qPos)
-{
-    var time = Math.floor(Math.floor(qPos*2*3*2 + ((qPos*2*3*3) - (qPos*2*3*2)) * Math.random()) * 0.01);
-    document.getElementById('queueTime').innerHTML = 'Estimated time: ' + time + ' min';
+function getEstimatedTime(qPos) {
+    var time = Math.floor(Math.floor(qPos * 2 * 3 * 2 + ((qPos * 2 * 3 * 3) - (qPos * 2 * 3 * 2)) * Math.random()) * 0.01);
+    document.getElementById('queueTime').innerHTML = 'Время ожидания: ' + time + ' мин.';
 }
 
-function doDisconnect()
-{
+function doDisconnect() {
     hideQueue();
     showDisconnect();
     playButtonAudio(1);
@@ -142,22 +131,19 @@ function doDisconnect()
     console.log("DC'd")
 }
 
-function manualChangeExpac()
-{
+function manualChangeExpac() {
     console.log("Changing xpac to: ");
     expansion += 1;
-    if(expansion > 8)
+    if (expansion > 8)
         expansion = 0;
-    
+
     var bg = document.getElementById('background');
     bg.muted = false;
     switchExpansion();
 }
 
-function switchExpansion()
-{
-    if(disconnected)
-    {
+function switchExpansion() {
+    if (disconnected) {
         disconnected = false;
         hideQueue();
         showDisconnect();
@@ -171,7 +157,7 @@ function switchExpansion()
     var version = document.getElementById('buildVersion');
     var date = document.getElementById('buildDate');
     var copyright = document.getElementById('copyrightText');
-    
+
     bg.pause();
     audio.pause();
     var expName = expansionMap[expansion];
@@ -182,68 +168,60 @@ function switchExpansion()
     logo.style.background = `url(${logoPath}/${expName}.png)`;
     version.textContent = verMap[expansion];
     date.textContent = dateMap[expansion];
-    copyright.textContent = `Copyright 2004-${copyMap[expansion]} Blizzard Entertainment. All Right Reserved.`;
+    copyright.textContent = `© Blizzard Entertainment 2004-${copyMap[expansion]} гг. Все права защищены.`;
     setButtonColors(buttonColorMap[expansion]);
-    
+
     bg.load();
     bg.play();
     audio.play();
-    
+
 }
 
-function playButtonAudio(index)
-{
+function playButtonAudio(index) {
     buttonAudio.pause();
     buttonAudio.time = 0;
 
-    if(index === 0)
+    if (index === 0)
         buttonAudio.src = './assets/audio/ui/button_click.ogg';
     else
         buttonAudio.src = './assets/audio/ui/button_click_big.ogg';
-    
+
     buttonAudio.play();
 }
 
-function hideQueue()
-{
+function hideQueue() {
     var x = document.getElementById("queue");
-    if(x.style.display === "none")
+    if (x.style.display === "none")
         x.style.display = "flex";
     else
         x.style.display = "none";
 }
 
-function showDisconnect()
-{
+function showDisconnect() {
     var x = document.getElementById("disconnectBox");
-    if(x.style.display === "none")
+    if (x.style.display === "none")
         x.style.display = "flex";
     else
         x.style.display = "none";
 }
 
-function resetQueue()
-{
+function resetQueue() {
     disconnected = false;
     showDisconnect();
     hideQueue();
 }
 
-function showSettings()
-{
+function showSettings() {
     var opt = document.getElementById("options");
-    if(opt.style.display == "none")
-    {
+    if (opt.style.display == "none") {
         opt.style.display = "flex";
     }
-    else
-    {
+    else {
         opt.style.display = "none";
     }
 }
 
-function adjustVolume()
-{
+function adjustVolume() {
     var slider = document.getElementById("volumeSlider");
     var val = slider.value * 0.01;
     audio.volume = val;
@@ -251,26 +229,26 @@ function adjustVolume()
     document.getElementById('background').volume = val;
 }
 
-function setButtonColors(index)
-{
+function setButtonColors(index) {
     var quitButton = document.getElementById("quitButton");
     var optButton = document.getElementById("optButton");
     var realmListButton = document.getElementById("realmListButton");
     var disconButton = document.getElementById("disconButton");
-    switch(index)
-    {
+    switch (index) {
         case 0:
             quitButton.className = "button";
             optButton.className = "button";
             realmListButton.className = "button";
             disconButton.className = "button";
-        break;
+            MoveButton.className = "button";
+            break;
 
         case 1:
             quitButton.className = "button_b";
             optButton.className = "button_b";
             realmListButton.className = "button_b";
             disconButton.className = "button_b";
-        break;
+            MoveButton.className = "button_b";
+            break;
     }
 }
