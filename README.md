@@ -1,2 +1,3 @@
 # WoWLoginScreens
-[Recreations of the World of Warcraft login screens for every expansion.](https://DygDyg.github.io/WoWLoginScreens/)
+[Воссозданные экраны входа в World of Warcraft для каждого дополнения.](https://DygDyg.github.io/WoWLoginScreens/)
+Обновил до Dragonflight
