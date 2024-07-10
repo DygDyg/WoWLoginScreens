@@ -1,4 +1,4 @@
-var expansion = 8;
+var expansion = 9;
 
 var expansionMap = [
     'Vanilla',
@@ -10,6 +10,7 @@ var expansionMap = [
     'Legion',
     'BattleForAzeroth',
     'Shadowlands',
+    'Dragonflight'
 ]
 
 var audioPath = './assets/audio';
@@ -25,7 +26,8 @@ var verMap = [
     'Версия 6.2.0 (20173) (Релиз x64)',
     'Версия 7.3.5 (26365) (Релиз x64)',
     'Версия 8.3.7 (35662) (Релиз x64)',
-    'Версия 9.0.1 (35944) (Релиз x64)'
+    'Версия 9.0.1 (35944) (Релиз x64)',
+    'Версия 10.2.7 (55461) (Релиз x64)'
 ];
 
 var dateMap = [
@@ -37,13 +39,15 @@ var dateMap = [
     'Jun 20 2015',
     'Apr 3 2018',
     'Aug 24 2020',
-    'Oct 13 2020'
+    'Oct 13 2020',
+    'Jul 2 2024'
 ];
 
 var buttonColorMap = [
     0,
     0,
     1,
+    0,
     0,
     0,
     0,
@@ -61,7 +65,8 @@ var copyMap = [
     2015,
     2018,
     2020,
-    2020
+    2020,
+    2024
 ];
 
 var cursor;
@@ -134,7 +139,7 @@ function doDisconnect() {
 function manualChangeExpac() {
     console.log("Changing xpac to: ");
     expansion += 1;
-    if (expansion > 8)
+    if (expansion > 9)
         expansion = 0;
 
     var bg = document.getElementById('background');
@@ -166,6 +171,7 @@ function switchExpansion() {
     bgWebM.setAttribute('src', `${videoPath}/${expName}.webm`);
     bgMp4.setAttribute('src', `${videoPath}/${expName}.mp4`)
     logo.style.background = `url(${logoPath}/${expName}.png)`;
+    // logo.style.filter = "drop-shadow(0 0 15px rgba(0, 0, 0, 1))";
     version.textContent = verMap[expansion];
     date.textContent = dateMap[expansion];
     copyright.textContent = `© Blizzard Entertainment 2004-${copyMap[expansion]} гг. Все права защищены.`;
