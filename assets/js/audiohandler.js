@@ -10,7 +10,8 @@ var expansionMap = [
     'Legion',
     'BattleForAzeroth',
     'Shadowlands',
-    'Dragonflight'
+    'Dragonflight',
+    'TheWarWithin'
 ]
 
 var audioPath = './assets/audio';
@@ -27,7 +28,8 @@ var verMap = [
     'Версия 7.3.5 (26365) (Релиз x64)',
     'Версия 8.3.7 (35662) (Релиз x64)',
     'Версия 9.0.1 (35944) (Релиз x64)',
-    'Версия 10.2.7 (55461) (Релиз x64)'
+    'Версия 10.2.7 (55461) (Релиз x64)',
+    'Версия 11.0.2 (55399) (Beta x64)',
 ];
 
 var dateMap = [
@@ -40,13 +42,15 @@ var dateMap = [
     'Apr 3 2018',
     'Aug 24 2020',
     'Oct 13 2020',
-    'Jul 2 2024'
+    'Jul 2 2024',
+    'Jul 28 2024',
 ];
 
 var buttonColorMap = [
     0,
     0,
     1,
+    0,
     0,
     0,
     0,
@@ -66,6 +70,7 @@ var copyMap = [
     2018,
     2020,
     2020,
+    2024,
     2024
 ];
 
@@ -139,7 +144,7 @@ function doDisconnect() {
 function manualChangeExpac() {
     console.log("Changing xpac to: ");
     expansion += 1;
-    if (expansion > 9)
+    if (expansion > 10)
         expansion = 0;
 
     var bg = document.getElementById('background');
