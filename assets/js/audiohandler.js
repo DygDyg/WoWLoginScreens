@@ -1,4 +1,4 @@
-var expansion = 9;
+
 
 var expansionMap = [
     'Vanilla',
@@ -73,6 +73,8 @@ var copyMap = [
     2024,
     2024
 ];
+
+var expansion = dateMap.length-1;
 
 var cursor;
 var audio = new Audio();
