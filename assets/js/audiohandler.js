@@ -11,7 +11,8 @@ var expansionMap = [
     'BattleForAzeroth',
     'Shadowlands',
     'Dragonflight',
-    'TheWarWithin'
+    'TheWarWithin',
+    'Midnight',
 ]
 
 var audioPath = './assets/audio';
@@ -30,6 +31,7 @@ var verMap = [
     'Версия 9.0.1 (35944) (Релиз x64)',
     'Версия 10.2.7 (55461) (Релиз x64)',
     'Версия 11.0.2 (55399) (Beta x64)',
+    'Версия 12.0.2 (64914) (Beta x64)',
 ];
 
 var dateMap = [
@@ -44,6 +46,7 @@ var dateMap = [
     'Oct 13 2020',
     'Jul 2 2024',
     'Jul 28 2024',
+    'Dec 12 2025',
 ];
 
 var buttonColorMap = [
@@ -57,7 +60,8 @@ var buttonColorMap = [
     0,
     0,
     0,
-    0
+    0,
+    0,
 ];
 
 var copyMap = [
@@ -71,7 +75,8 @@ var copyMap = [
     2020,
     2020,
     2024,
-    2024
+    2024,
+    2025,
 ];
 
 var expansion = dateMap.length-1;
